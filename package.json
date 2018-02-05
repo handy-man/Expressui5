@@ -20,6 +20,7 @@
   },
   "homepage": "https://gitlab.com/NathanHand/expressui5#README",
   "dependencies": {
+    "edit-file": "^0.3.0",
     "inquirer": "^5.1.0"
   },
   "bin": {

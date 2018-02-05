@@ -2,6 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const CURR_DIR = process.cwd();
+const editFile = require("edit-file");
+
 
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
 
@@ -20,6 +22,15 @@ const QUESTIONS = [
             if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
             else return 'Project name may only include letters, numbers, underscores and hashes.';
         }
+    },
+    {
+        name: 'project-namespace',
+        type: 'input',
+        message: 'Namespace:',
+        validate: function (input) {
+            if (/^\w[\w\.]+\w$/.test(input)) return true;
+            else return 'Project name may only include letters & dots.';
+        }
     }
 ];
 
@@ -28,14 +39,15 @@ inquirer.prompt(QUESTIONS)
     .then(answers => {
     const projectChoice = answers['project-choice'];
     const projectName = answers['project-name'];
+    const projectNameSpace = answers['project-namespace'];
     const templatePath = `${__dirname}/templates/${projectChoice}`;
 
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
-    createDirectoryContents(templatePath, projectName);
+    createDirectoryContents(templatePath, projectName, projectNameSpace);
 });
 
-function createDirectoryContents (templatePath, newProjectPath) {
+function createDirectoryContents (templatePath, newProjectPath, nameSpace) {
     const filesToCreate = fs.readdirSync(templatePath);
 
     filesToCreate.forEach(file => {
@@ -46,6 +58,7 @@ function createDirectoryContents (templatePath, newProjectPath) {
 
     if (stats.isFile()) {
         const contents = fs.readFileSync(origFilePath, 'utf8');
+
 
         const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
         fs.writeFileSync(writePath, contents, 'utf8');

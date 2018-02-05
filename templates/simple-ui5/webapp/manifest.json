@@ -1,7 +1,7 @@
 {
 	"_version": "1.7.0",
 	"sap.app": {
-		"id": "comTesting",
+		"id": "ui5expresstemplate",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -39,7 +39,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "comTesting.view.View1",
+			"viewName": "ui5expresstemplate.view.View1",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -62,7 +62,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "comTesting.i18n.i18n"
+					"bundleName": "ui5expresstemplate.i18n.i18n"
 				}
 			}
 		},
