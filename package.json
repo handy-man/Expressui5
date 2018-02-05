@@ -1,0 +1,28 @@
+{
+  "name": "expressui5",
+  "version": "1.0.0",
+  "description": "CLI tool to create UI5 projects quickly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/NathanHand/expressui5.git"
+  },
+  "keywords": [
+    "UI5"
+  ],
+  "author": "Nathan Hand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/NathanHand/expressui5/issues"
+  },
+  "homepage": "https://gitlab.com/NathanHand/expressui5#README",
+  "dependencies": {
+    "inquirer": "^5.1.0"
+  },
+  "bin": {
+    "expressui5": "./index.js"
+  }
+}
