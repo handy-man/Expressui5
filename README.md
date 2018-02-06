@@ -1,8 +1,8 @@
-#expressui5
+# expressui5
 
 CLI tool to create UI5 projects quickly from templates.
 
-##install
+## install
 
 `npm install -g expressui5`
 
@@ -16,8 +16,8 @@ Follow the prompts on screen which include selecting a template to use, giving a
 
 Goto your global node_modules directory:
 
-'npm root -g'
+`npm root -g`
 
 copy your template application into the folder:
 
-'expressui5/templates/'
+`expressui5/templates/`
