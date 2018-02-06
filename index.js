@@ -49,6 +49,7 @@ inquirer.prompt(QUESTIONS)
 
 function createDirectoryContents (templatePath, newProjectPath, nameSpace) {
     const filesToCreate = fs.readdirSync(templatePath);
+    const nameSpaceFilePath = nameSpace.replace(/\./g, '/');
 
     filesToCreate.forEach(file => {
         const origFilePath = `${templatePath}/${file}`;
@@ -57,7 +58,9 @@ function createDirectoryContents (templatePath, newProjectPath, nameSpace) {
     const stats = fs.statSync(origFilePath);
 
     if (stats.isFile()) {
-        const contents = fs.readFileSync(origFilePath, 'utf8');
+        let contents = fs.readFileSync(origFilePath, 'utf8');
+        contents =  contents.replace(/ui5expresstemplate/g, nameSpace);
+        contents =  contents.replace(/templatepath/g, nameSpaceFilePath);
 
 
         const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
@@ -66,7 +69,7 @@ function createDirectoryContents (templatePath, newProjectPath, nameSpace) {
         fs.mkdirSync(`${CURR_DIR}/${newProjectPath}/${file}`);
 
         // recursive call
-        createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`);
+        createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`, nameSpace);
     }
 });
 }
