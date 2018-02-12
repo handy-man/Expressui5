@@ -21,3 +21,9 @@ Goto your global node_modules directory:
 copy your template application into the folder:
 
 `expressui5/templates/`
+
+Templates must have the following changes made to them for automated namespace changes to take place:
+
+Edit all namespaces with the "." notation to instead read "ui5expresstemplate" and all namespaces with the '/' to read "templatepath".
+
+Examples of this can be seen inside of the included templates.
