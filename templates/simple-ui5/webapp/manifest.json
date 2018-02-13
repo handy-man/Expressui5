@@ -39,7 +39,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "ui5expresstemplate.view.View1",
+			"viewName": "ui5expresstemplate.view.mainView",
 			"type": "XML"
 		},
 		"dependencies": {
