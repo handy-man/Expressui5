@@ -8,21 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/NathanHand/expressui5.git"
+    "url": "git+https://github.com/handy-man/Expressui5.git"
   },
   "keywords": [
     "UI5"
   ],
   "author": "Nathan Hand",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://gitlab.com/NathanHand/expressui5/issues"
+    "url": "https://github.com/handy-man/Expressui5issues"
   },
-  "homepage": "https://gitlab.com/NathanHand/expressui5#README",
+  "homepage": "https://github.com/handy-man/Expressui5#README",
   "dependencies": {
     "inquirer": "^5.1.0"
   },
   "bin": {
     "expressui5": "./index.js"
-  }
+  },
+  "devDependencies": {}
 }
