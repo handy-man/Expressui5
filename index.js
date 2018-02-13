@@ -2,8 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const CURR_DIR = process.cwd();
-const editFile = require("edit-file");
-
 
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
 
