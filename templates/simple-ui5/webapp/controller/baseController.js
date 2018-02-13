@@ -5,5 +5,8 @@ sap.ui.define([
 
 	return Controller.extend("ui5expresstemplate.controller.baseController", {
 
+		onInit: function () {
+
+		}
 	});
 });
