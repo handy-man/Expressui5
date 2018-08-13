@@ -1,6 +1,6 @@
 {
   "name": "expressui5",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "CLI tool to create UI5 projects quickly",
   "main": "index.js",
   "scripts": {
