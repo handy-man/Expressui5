@@ -38,9 +38,43 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "ui5expresstemplate.view.mainView",
+			"viewName": "ui5expresstemplate.view.app",
 			"type": "XML"
 		},
+		"routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "ui5expresstemplate.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": "notFound"
+                }
+            },
+            "routes": [{
+                "pattern": "",
+                "name": "main",
+                "target": "main"
+            }, {
+                "pattern": "page2",
+                "name": "secondView",
+                "target": "secondView"
+            }],
+            "targets": {
+                "main": {
+                    "viewName": "mainView",
+                    "viewId": "mainView",
+                    "viewLevel": 1
+                },
+                "secondView": {
+                    "viewName": "secondView",
+                    "viewId": "secondView",
+                    "viewLevel": 2,
+                    "transition": "flip"
+                }
+            }
+        },
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {

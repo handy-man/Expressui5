@@ -10,7 +10,14 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 */
 		onInit: function() {
+			this.getRouter().getRoute("secondView").attachMatched(this._onRouteMatched, this);
+		},
 
+		/**
+		 * Called when we hit the route "secondView" as defined in the onInit function.
+		 * Typically where we might make some ODATA calls if we've not been able to do direct binding to the view etc.
+		 */
+		_onRouteMatched: function(){
 		},
 
 		/**
@@ -34,13 +41,6 @@ sap.ui.define([
 		 */
 		onExit: function() {
 
-		},
-
-		/**
-		 * Called from the footer button in the mainView.view.xml, used to show an example of routing.
-		 */
-		navToSecondView: function(){
-			this.getRouter().navTo("secondView");
 		}
 	});
 });
