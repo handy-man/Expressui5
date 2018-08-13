@@ -1,0 +1,14 @@
+<mvc:View
+	controllerName="ui5expresstemplate.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	busy="{appView>/busy}"
+	busyIndicatorDelay="{appView>/delay}"
+	xmlns="sap.f"
+	height="100%">
+	<FlexibleColumnLayout
+		id="app"
+		layout="{appView>/layout}"
+		backgroundDesign="Translucent">
+	</FlexibleColumnLayout>
+</mvc:View>

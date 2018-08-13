@@ -1,0 +1,115 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "ui5expresstemplate",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ui5expresstemplate.view.app",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"routing": {
+            "config": {
+				"routerClass": "sap.f.routing.Router",
+                "viewType": "XML",
+                "viewPath": "ui5expresstemplate.view",
+				"controlAggregation": "beginColumnPages",
+				"controlId": "app",
+                "bypassed": {
+                    "target": "notFound"
+				},
+				"async": true
+            },
+            "routes": [{
+                "pattern": "",
+                "name": "master",
+                "target": "master"
+            }, {
+                "pattern": "detail/{objectId}",
+                "name": "detail",
+                "target": [
+					"master",
+					"detail"
+				]
+            }],
+            "targets": {
+                "master": {
+                    "viewName": "master",
+                    "viewId": "master",
+                    "viewLevel": 1
+                },
+                "detail": {
+                    "viewName": "detail",
+                    "viewId": "detail",
+					"viewLevel": 1,
+					"controlAggregation": "midColumnPages"
+				}
+            }
+        },
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {},
+				"sap.f": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ui5expresstemplate.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}
