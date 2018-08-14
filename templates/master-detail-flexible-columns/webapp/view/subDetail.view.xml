@@ -11,7 +11,7 @@
 			<Title text="Sub Detail Header"/>
 		</semantic:titleHeading>
 		<semantic:headerContent>
-					<Text text="Sub Detail Header Content goes here" />
+					<Text text="Sub Detail Header Content goes here, I can still access our data: {northwind>ContactName}" />
 		</semantic:headerContent>
 		<semantic:content>
 			<Text text="Sub Detail Header content goes here" />

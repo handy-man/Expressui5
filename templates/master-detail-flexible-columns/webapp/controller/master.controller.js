@@ -16,28 +16,6 @@ sap.ui.define([
 		},
 
 		_onRouteMatched: function(oEvent){
-			var data = {
-                customers: [
-                    {
-						name: "Nathan",
-						company: "Capgemini",
-						mobile: "08844392222"
-					},
-					{
-						name: "Leon",
-						company: "Capgemini",
-						mobile: "074421231231"
-					},
-					{
-						name: "Neil",
-						company: "Capgemini",
-						mobile: "07888811231"
-                    }
-                ]
-            };
-			var myModel = new JSONModel(data);	
-
-			this.getView().setModel(myModel, "myModel");
 			this.getModel("appView").setProperty("/layout", "OneColumn");
 		},
 
@@ -64,10 +42,12 @@ sap.ui.define([
 
 		},
 
-		onSelectionChange: function(oItem){
+		onSelectionChange: function(oEvent){
+			var oList = oEvent.getSource();
+			var sObject = oList.getSelectedItem().getBindingContext("northwind").getObject();
 			this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
 			this.getRouter().navTo("detail", {
-				objectId : oItem.getParameter("listItem").getBindingContext("myModel").getObject().name
+				objectId : sObject.CustomerID
 			});
 		}
 	});

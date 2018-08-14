@@ -12,6 +12,16 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "https://cors-anywhere.herokuapp.com/http://services.odata.org/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
 		}
 	},
 
@@ -116,6 +126,14 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "ui5expresstemplate.i18n.i18n"
+				}
+			},
+			"northwind": {
+				"dataSource": "mainService",
+				"preload": false,
+				"settings": {
+					"odataVersion": "2.0",
+					"useBatch": false
 				}
 			}
 		},

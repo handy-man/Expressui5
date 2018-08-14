@@ -1,8 +1,10 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"templatepath/model/models"
-], function(UIComponent, Device, models) {
+	"templatepath/model/models",
+	"templatepath/util/ListSelector",
+
+], function(UIComponent, Device, models, ListSelector) {
 	"use strict";
 
 	return UIComponent.extend("ui5expresstemplate.Component", {
@@ -17,6 +19,9 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
+			//List Selector from the master-detail template provided by SAP.
+			this.oListSelector = new ListSelector();
+
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 

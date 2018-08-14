@@ -8,7 +8,7 @@
 		busy="false"
 		busyIndicatorDelay="0">
 		<semantic:titleHeading>
-			<Title text="Header Title"/>
+			<Title text="Customer Name :{northwind>ContactName}"/>
 		</semantic:titleHeading>
 		<semantic:headerContent>
 			<Text text="Header Content goes here" />
