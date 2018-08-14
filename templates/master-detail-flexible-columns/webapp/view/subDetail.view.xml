@@ -8,10 +8,10 @@
 		busy="false"
 		busyIndicatorDelay="0">
 		<semantic:titleHeading>
-			<Title text="Sub Detail Header"/>
+			<Title text="Order Details for Order ID: {northwind>OrderID}"/>
 		</semantic:titleHeading>
 		<semantic:headerContent>
-					<Text text="Sub Detail Header Content goes here, I can still access our data: {northwind>ContactName}" />
+					<Text text="Sub Detail Header Content goes here." />
 		</semantic:headerContent>
 		<semantic:content>
 			<Table
