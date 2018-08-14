@@ -1,0 +1,62 @@
+<mvc:View
+	controllerName="ui5expresstemplate.controller.subDetail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+	<semantic:SemanticPage
+		id="subDetail"
+		busy="false"
+		busyIndicatorDelay="0">
+		<semantic:titleHeading>
+			<Title text="Sub Detail Header"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+					<Text text="Sub Detail Header Content goes here, I can still access our data: {northwind>ContactName}" />
+		</semantic:headerContent>
+		<semantic:content>
+			<Table
+				width="auto"
+				items="{northwind>Order_Details}"
+				>
+				<columns>
+					<Column>
+						<Text text="ProductID"/>
+					</Column>
+					<Column>
+						<Text text="UnitPrice"/>
+					</Column>
+					<Column>
+						<Text text="Quantity"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{northwind>ProductID}" />
+							<Text text="{northwind>UnitPrice}" />
+							<Text text="{northwind>Quantity}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<!--Semantic ShareMenu Buttons-->
+		<semantic:closeAction>
+			<semantic:CloseAction
+				id="closeColumn"
+				press="onCloseSubDetailPress"/>
+		</semantic:closeAction>
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction
+				id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+				press="toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction
+				id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+				press="toggleFullScreen"/>
+		</semantic:exitFullScreenAction>
+	</semantic:SemanticPage>
+</mvc:View>

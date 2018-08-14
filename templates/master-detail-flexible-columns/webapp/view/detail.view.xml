@@ -1,0 +1,59 @@
+<mvc:View
+	controllerName="ui5expresstemplate.controller.detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+	<semantic:SemanticPage
+		id="detailPage"
+		busy="false"
+		busyIndicatorDelay="0">
+		<semantic:titleHeading>
+			<Title text="Customer Name :{northwind>ContactName}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<Text text="Header Content goes here" />
+		</semantic:headerContent>
+		<semantic:content>
+				<List
+				width="auto"
+				class="sapFDynamicPageAlignContent"
+				items="{
+					path: 'northwind>Orders'
+				}"
+				busyIndicatorDelay="{masterView>/delay}"
+				noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"
+				selectionChange="onSelectionChange">
+				<items>
+					<ObjectListItem
+						type="Navigation"
+						press="onSelectionChange"
+						title="{northwind>OrderID}"
+					>
+					</ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+		<!--Semantic ShareMenu Buttons-->
+		<semantic:closeAction>
+			<semantic:CloseAction
+				id="closeColumn"
+				press="onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction
+				id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+				press="toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction
+				id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+				press="toggleFullScreen"/>
+		</semantic:exitFullScreenAction>
+	</semantic:SemanticPage>
+</mvc:View>
