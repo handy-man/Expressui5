@@ -36,7 +36,7 @@ Clone the github repo, once installed in your local system if you run the comman
 
 To make new templates I suggest copying one of the already existing ones (which one might depend on your template) and then editing accordingly. Once complete submit a PR to merge into the master branch and I will review and publish to NPM as needed. 
 
-#Template explanations
+# Template explanations
 
 ## simple-ui5 template
 
