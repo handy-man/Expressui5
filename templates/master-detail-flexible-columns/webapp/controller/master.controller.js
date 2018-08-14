@@ -4,7 +4,7 @@ sap.ui.define([
 ], function(baseController, JSONModel) {
 	"use strict";
 
-	return baseController.extend("ui5expresstemplate.controller.mainView", {
+	return baseController.extend("ui5expresstemplate.controller.master", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.

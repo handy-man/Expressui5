@@ -10,7 +10,7 @@
 		<semantic:titleHeading>
 			<Title
 				id="masterPageTitle"
-				text="The Header"/>
+				text="Master Header"/>
 		</semantic:titleHeading>
 		<semantic:content>
 			<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
@@ -28,7 +28,7 @@
 				growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"
 				selectionChange="onSelectionChange">
-				<infoToolbar>
+				<!-- <infoToolbar>
 					<Toolbar
 						active="true"
 						id="filterBar"
@@ -38,8 +38,8 @@
 							id="filterBarLabel"
 							text="{masterView>/filterBarLabel}" />
 					</Toolbar>
-				</infoToolbar>
-				<headerToolbar>
+				</infoToolbar> -->
+				<!-- <headerToolbar>
 					<OverflowToolbar>
 						<SearchField
 							id="searchField"
@@ -72,7 +72,7 @@
 							icon="sap-icon://group-2"
 							type="Transparent"/>
 					</OverflowToolbar>
-				</headerToolbar>
+				</headerToolbar> -->
 				<items>
 					<ObjectListItem
 						type="Navigation"

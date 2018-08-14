@@ -66,6 +66,14 @@
 					"master",
 					"detail"
 				]
+            }, {
+                "pattern": "detail/{objectId}/subDetails",
+                "name": "subDetail",
+                "target": [
+					"master",
+					"detail",
+					"subDetail"
+				]
             }],
             "targets": {
                 "master": {
@@ -78,6 +86,11 @@
                     "viewId": "detail",
 					"viewLevel": 1,
 					"controlAggregation": "midColumnPages"
+				},"subDetail": {
+                    "viewName": "subDetail",
+                    "viewId": "subDetail",
+					"viewLevel": 1,
+					"controlAggregation": "endColumnPages"
 				}
             }
         },

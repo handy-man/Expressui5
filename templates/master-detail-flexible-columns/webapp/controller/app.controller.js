@@ -15,6 +15,9 @@ sap.ui.define([
                 actionButtonsInfo : {
                     midColumn : {
                         fullScreen : false
+                    },
+                    endColumn : {
+                        fullScreen : false
                     }
                 }
             });

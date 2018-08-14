@@ -1,26 +1,26 @@
 <mvc:View
-	controllerName="ui5expresstemplate.controller.detail"
+	controllerName="ui5expresstemplate.controller.subDetail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic">
 	<semantic:SemanticPage
-		id="detailPage"
+		id="subDetail"
 		busy="false"
 		busyIndicatorDelay="0">
 		<semantic:titleHeading>
-			<Title text="Header Title"/>
+			<Title text="Sub Detail Header"/>
 		</semantic:titleHeading>
 		<semantic:headerContent>
-			<Text text="Header Content goes here" />
+					<Text text="Sub Detail Header Content goes here" />
 		</semantic:headerContent>
 		<semantic:content>
-			<Button press="showSubDetail" text="Show Sub Detail"/>
+			<Text text="Sub Detail Header content goes here" />
 		</semantic:content>
 		<!--Semantic ShareMenu Buttons-->
 		<semantic:closeAction>
 			<semantic:CloseAction
 				id="closeColumn"
-				press="onCloseDetailPress"/>
+				press="onCloseSubDetailPress"/>
 		</semantic:closeAction>
 		<semantic:fullScreenAction>
 			<semantic:FullScreenAction
