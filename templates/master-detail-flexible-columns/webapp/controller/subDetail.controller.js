@@ -19,10 +19,10 @@ sap.ui.define([
 		 */
 		_onRouteMatched: function(oEvent){
 			var sObjectId =  oEvent.getParameter("arguments").objectId;
-			var sObjectId =  oEvent.getParameter("arguments").objectId;
+			var sOrderId =  oEvent.getParameter("arguments").orderId;
 			this.getModel("northwind").metadataLoaded().then( function() {
-				var sObjectPath = this.getModel("northwind").createKey("Customers", {
-					CustomerID :  sObjectId
+				var sObjectPath = this.getModel("northwind").createKey("Orders", {
+					OrderID :  sOrderId
 				});
 				this._bindView("/" + sObjectPath);
 			}.bind(this));
@@ -53,6 +53,9 @@ sap.ui.define([
 						dataReceived: function () {
 							//oViewModel.setProperty("/busy", false);
 						}
+					},
+					parameters:{
+						expand: "Order_Details"
 					}
 				});
 			},
@@ -69,19 +72,9 @@ sap.ui.define([
 					this.getOwnerComponent().oListSelector.clearMasterListSelection();
 					return;
 				}
-				var sPath = oElementBinding.getPath(),
-					oResourceBundle = this.getResourceBundle(),
-					oObject = oView.getModel().getObject(sPath),
-					sObjectId = oObject.ObjectID,
-					sObjectName = oObject.Name,
-					oViewModel = this.getModel("detailView");
-
+				var sPath = oElementBinding.getPath();
 				this.getOwnerComponent().oListSelector.selectAListItem(sPath);
 
-				oViewModel.setProperty("/shareSendEmailSubject",
-					oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
-				oViewModel.setProperty("/shareSendEmailMessage",
-					oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
 			},
 
 		/**
@@ -124,9 +117,10 @@ sap.ui.define([
 		},
 
 		onCloseSubDetailPress: function(){
+			var sObject = this.getView().getBindingContext("northwind").getObject();
 			this.getModel("appView").setProperty("/actionButtonsInfo/endColumn/fullScreen", false);
 			this.getRouter().navTo("detail", {
-				objectId : "Nathan"
+				objectId : sObject.CustomerID
 			});
 		}
 	});

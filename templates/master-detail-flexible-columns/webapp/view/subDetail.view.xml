@@ -14,7 +14,31 @@
 					<Text text="Sub Detail Header Content goes here, I can still access our data: {northwind>ContactName}" />
 		</semantic:headerContent>
 		<semantic:content>
-			<Text text="Sub Detail Header content goes here" />
+			<Table
+				width="auto"
+				items="{northwind>Order_Details}"
+				>
+				<columns>
+					<Column>
+						<Text text="ProductID"/>
+					</Column>
+					<Column>
+						<Text text="UnitPrice"/>
+					</Column>
+					<Column>
+						<Text text="Quantity"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{northwind>ProductID}" />
+							<Text text="{northwind>UnitPrice}" />
+							<Text text="{northwind>Quantity}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
 		</semantic:content>
 		<!--Semantic ShareMenu Buttons-->
 		<semantic:closeAction>

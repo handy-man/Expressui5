@@ -14,7 +14,28 @@
 			<Text text="Header Content goes here" />
 		</semantic:headerContent>
 		<semantic:content>
-			<Button press="showSubDetail" text="Show Sub Detail"/>
+				<List
+				width="auto"
+				class="sapFDynamicPageAlignContent"
+				items="{
+					path: 'northwind>Orders'
+				}"
+				busyIndicatorDelay="{masterView>/delay}"
+				noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"
+				selectionChange="onSelectionChange">
+				<items>
+					<ObjectListItem
+						type="Navigation"
+						press="onSelectionChange"
+						title="{northwind>OrderID}"
+					>
+					</ObjectListItem>
+				</items>
+			</List>
 		</semantic:content>
 		<!--Semantic ShareMenu Buttons-->
 		<semantic:closeAction>

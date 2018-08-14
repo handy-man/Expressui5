@@ -77,7 +77,7 @@
 					"detail"
 				]
             }, {
-                "pattern": "detail/{objectId}/subDetails",
+                "pattern": "detail/{objectId}/{orderId}",
                 "name": "subDetail",
                 "target": [
 					"master",

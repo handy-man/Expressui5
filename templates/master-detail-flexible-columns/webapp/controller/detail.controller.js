@@ -53,6 +53,8 @@ sap.ui.define([
 						dataReceived: function () {
 							//oViewModel.setProperty("/busy", false);
 						}
+					},parameters:{
+						expand: "Orders"
 					}
 				});
 			},
@@ -108,11 +110,13 @@ sap.ui.define([
 
 		},
 
-		showSubDetail: function(){
-			var sObject = this.getView().getBindingContext("northwind").getObject();
+		onSelectionChange: function(oEvent){
+			var oList = oEvent.getSource();
+			var sObject = oList.getSelectedItem().getBindingContext("northwind").getObject();
 			this.getModel("appView").setProperty("/layout", "ThreeColumnsEndExpanded");
 			this.getRouter().navTo("subDetail", {
-				objectId : sObject.CustomerID
+				objectId : sObject.CustomerID,
+				orderId: sObject.OrderID
 			});
 		},
 
