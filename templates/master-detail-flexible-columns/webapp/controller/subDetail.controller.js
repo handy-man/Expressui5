@@ -62,7 +62,7 @@ sap.ui.define([
 
 			_onBindingChange : function () {
 				var oView = this.getView(),
-					oElementBinding = oView.getElementBinding();
+					oElementBinding = oView.getElementBinding("northwind");
 
 				// No data for the binding
 				if (!oElementBinding.getBoundContext()) {
