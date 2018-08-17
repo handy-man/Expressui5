@@ -61,29 +61,18 @@ sap.ui.define([
 
 			_onBindingChange : function () {
 				var oView = this.getView(),
-					oElementBinding = oView.getElementBinding();
+				oElementBinding = oView.getElementBinding("northwind");
 
-				// No data for the binding
-				if (!oElementBinding.getBoundContext()) {
-					//this.getRouter().getTargets().display("detailObjectNotFound");
-					// if object could not be found, the selection in the master list
-					// does not make sense anymore.
-					this.getOwnerComponent().oListSelector.clearMasterListSelection();
-					return;
-				}
-				var sPath = oElementBinding.getPath(),
-					oResourceBundle = this.getResourceBundle(),
-					oObject = oView.getModel().getObject(sPath),
-					sObjectId = oObject.ObjectID,
-					sObjectName = oObject.Name,
-					oViewModel = this.getModel("detailView");
-
-				this.getOwnerComponent().oListSelector.selectAListItem(sPath);
-
-				oViewModel.setProperty("/shareSendEmailSubject",
-					oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
-				oViewModel.setProperty("/shareSendEmailMessage",
-					oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
+			// No data for the binding
+			if (!oElementBinding.getBoundContext()) {
+				//this.getRouter().getTargets().display("detailObjectNotFound");
+				// if object could not be found, the selection in the master list
+				// does not make sense anymore.
+				this.getOwnerComponent().oListSelector.clearMasterListSelection();
+				return;
+			}
+			var sPath = oElementBinding.getPath();
+			this.getOwnerComponent().oListSelector.selectAListItem(sPath);
 			},
 
 
