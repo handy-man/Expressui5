@@ -57,7 +57,4 @@ typings/
 
 # dotenv environment variables file
 .env
-<<<<<<< HEAD
-=======
-
->>>>>>> 200e2c9cfeb3f9f3c329ad54897a4d6394171f95
+.DS_Store
