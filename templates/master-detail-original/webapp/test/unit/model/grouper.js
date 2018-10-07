@@ -1,5 +1,5 @@
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/model/grouper",
+		"templatepath/masterdetail/model/grouper",
 		"sap/ui/model/resource/ResourceModel",
 		"jquery.sap.global"
 	], function (Grouper, ResourceModel, $) {

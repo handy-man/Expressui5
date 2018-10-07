@@ -10,13 +10,13 @@ QUnit.config.autostart = false;
 
 sap.ui.require([
 	"sap/ui/test/Opa5",
-	"ui5expresstemplate/masterdetail/test/integration/pages/Common",
+	"templatepath/masterdetail/test/integration/pages/Common",
 	"sap/ui/test/opaQunit",
-	"ui5expresstemplate/masterdetail/test/integration/pages/App",
-	"ui5expresstemplate/masterdetail/test/integration/pages/Browser",
-	"ui5expresstemplate/masterdetail/test/integration/pages/Master",
-	"ui5expresstemplate/masterdetail/test/integration/pages/Detail",
-	"ui5expresstemplate/masterdetail/test/integration/pages/NotFound"
+	"templatepath/masterdetail/test/integration/pages/App",
+	"templatepath/masterdetail/test/integration/pages/Browser",
+	"templatepath/masterdetail/test/integration/pages/Master",
+	"templatepath/masterdetail/test/integration/pages/Detail",
+	"templatepath/masterdetail/test/integration/pages/NotFound"
 ], function (Opa5, Common) {
 	"use strict";
 	Opa5.extendConfig({
@@ -25,10 +25,10 @@ sap.ui.require([
 	});
 
 	sap.ui.require([
-		"ui5expresstemplate/masterdetail/test/integration/MasterJourney",
-		"ui5expresstemplate/masterdetail/test/integration/NavigationJourney",
-		"ui5expresstemplate/masterdetail/test/integration/NotFoundJourney",
-		"ui5expresstemplate/masterdetail/test/integration/BusyJourney"
+		"templatepath/masterdetail/test/integration/MasterJourney",
+		"templatepath/masterdetail/test/integration/NavigationJourney",
+		"templatepath/masterdetail/test/integration/NotFoundJourney",
+		"templatepath/masterdetail/test/integration/BusyJourney"
 	], function () {
 		QUnit.start();
 	});

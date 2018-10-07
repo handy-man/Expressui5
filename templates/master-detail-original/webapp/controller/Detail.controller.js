@@ -1,8 +1,8 @@
 /*global location */
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/controller/BaseController",
+		"templatepath/masterdetail/controller/BaseController",
 		"sap/ui/model/json/JSONModel",
-		"ui5expresstemplate/masterdetail/model/formatter"
+		"templatepath/masterdetail/model/formatter"
 	], function (BaseController, JSONModel, formatter) {
 		"use strict";
 

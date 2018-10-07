@@ -1,9 +1,9 @@
 sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-		"ui5expresstemplate/masterdetail/model/models",
-		"ui5expresstemplate/masterdetail/controller/ListSelector",
-		"ui5expresstemplate/masterdetail/controller/ErrorHandler"
+		"templatepath/masterdetail/model/models",
+		"templatepath/masterdetail/controller/ListSelector",
+		"templatepath/masterdetail/controller/ErrorHandler"
 	], function (UIComponent, Device, models, ListSelector, ErrorHandler) {
 		"use strict";
 

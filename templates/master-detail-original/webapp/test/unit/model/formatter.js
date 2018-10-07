@@ -1,6 +1,6 @@
 sap.ui.define([
 		"sap/m/Text",
-		"ui5expresstemplate/masterdetail/model/formatter"
+		"templatepath/masterdetail/model/formatter"
 	], function (Text, formatter) {
 		"use strict";
 

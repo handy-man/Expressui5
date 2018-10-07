@@ -3,7 +3,7 @@ sap.ui.define([
 		"sap/ui/test/actions/Press",
 		"sap/ui/test/matchers/PropertyStrictEquals",
 		"sap/ui/Device",
-		"ui5expresstemplate/masterdetail/test/integration/pages/Common"
+		"templatepath/masterdetail/test/integration/pages/Common"
 	], function(Opa5, Press, PropertyStrictEquals, Device, Common) {
 		"use strict";
 

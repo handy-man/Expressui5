@@ -1,5 +1,5 @@
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/controller/App.controller",
+		"templatepath/masterdetail/controller/App.controller",
 		"sap/m/SplitApp",
 		"sap/ui/core/Control",
 		"sap/ui/model/json/JSONModel",

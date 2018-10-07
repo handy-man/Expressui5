@@ -4,7 +4,7 @@ sap.ui.define([
 		"use strict";
 
 		function getFrameUrl (sHash, sUrlParameters) {
-			var sUrl = jQuery.sap.getResourcePath("ui5expresstemplate/masterdetail/app", ".html");
+			var sUrl = jQuery.sap.getResourcePath("templatepath/masterdetail/app", ".html");
 			sHash = sHash || "";
 			sUrlParameters = sUrlParameters ? "?" + sUrlParameters : "";
 
@@ -62,7 +62,7 @@ sap.ui.define([
 
 			getMockServer : function () {
 				return new Promise(function (success) {
-					Opa5.getWindow().sap.ui.require(["ui5expresstemplate/masterdetail/localService/mockserver"], function (mockserver) {
+					Opa5.getWindow().sap.ui.require(["templatepath/masterdetail/localService/mockserver"], function (mockserver) {
 						success(mockserver.getMockServer());
 					});
 				});

@@ -1,5 +1,5 @@
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/controller/ListSelector",
+		"templatepath/masterdetail/controller/ListSelector",
 		"sap/ui/thirdparty/sinon",
 		"sap/ui/thirdparty/sinon-qunit"
 	], function(ListSelector) {

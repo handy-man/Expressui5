@@ -1,5 +1,5 @@
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/controller/BaseController",
+		"templatepath/masterdetail/controller/BaseController",
 		"sap/ui/model/json/JSONModel"
 	], function (BaseController, JSONModel) {
 		"use strict";

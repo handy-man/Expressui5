@@ -1,14 +1,14 @@
 /*global history */
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/controller/BaseController",
+		"templatepath/masterdetail/controller/BaseController",
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/model/Filter",
 		"sap/ui/model/FilterOperator",
 		"sap/m/GroupHeaderListItem",
 		"sap/ui/Device",
-		"ui5expresstemplate/masterdetail/model/formatter",
-		"ui5expresstemplate/masterdetail/model/grouper",
-		"ui5expresstemplate/masterdetail/model/GroupSortState"
+		"templatepath/masterdetail/model/formatter",
+		"templatepath/masterdetail/model/grouper",
+		"templatepath/masterdetail/model/GroupSortState"
 	], function (BaseController, JSONModel, Filter, FilterOperator, GroupHeaderListItem, Device, formatter, grouper, GroupSortState) {
 		"use strict";
 

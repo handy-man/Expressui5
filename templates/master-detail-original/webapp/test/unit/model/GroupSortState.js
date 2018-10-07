@@ -1,5 +1,5 @@
 sap.ui.define([
-		"ui5expresstemplate/masterdetail/model/GroupSortState",
+		"templatepath/masterdetail/model/GroupSortState",
 		"sap/ui/model/json/JSONModel"
 	], function (GroupSortState, JSONModel) {
 	"use strict";
