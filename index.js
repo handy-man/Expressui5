@@ -57,7 +57,7 @@ function createDirectoryContents (templatePath, newProjectPath, nameSpace) {
 
     if (stats.isFile()) {
         let contents = fs.readFileSync(origFilePath, 'utf8');
-        contents =  contents.replace(/ui5expresstemplate/g, nameSpace);
+        contents =  contents.replace(/templatepath/g, nameSpace);
         contents =  contents.replace(/templatepath/g, nameSpaceFilePath);
 
 
